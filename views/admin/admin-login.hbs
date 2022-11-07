@@ -1,0 +1,60 @@
+<style>
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+    }
+
+    .h-custom {
+        height: calc(100% - 73px);
+    }
+
+    @media (max-width: 450px) {
+        .h-custom {
+            height: 100%;
+        }
+    }
+</style>
+
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://viragtea.com/backend/img/admin-login.jpg" class="img-fluid" alt="Sample image">
+            </div>
+
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form action="/admin/admin-login" method="post">
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <h3 class="text-center fw-bold mx-3 mb-0">Admin Login</h3>
+                    </div>
+
+                    {{#if loginErr}}
+                    <p class="error text-center" style="color: rgb(255, 104, 104);">Invalid username or password</p>
+                    {{/if}}
+
+                    <div class="form-outline mb-1 ">
+                        <input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
+                            placeholder="Enter a valid email address" />
+                        <label class="form-label" for="form3Example3">Email</label>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="password" name="password" id="form3Example4" class="form-control form-control-lg"
+                            placeholder="Enter password" />
+                        <label class="form-label" for="form3Example4">Password</label>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-2 pt-2 d-flex justify-content-between align-items-center">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

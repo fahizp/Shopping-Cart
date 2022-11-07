@@ -1,0 +1,48 @@
+<section>
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <a href="/admin/add-user" class="btn btn-primary col-md-2 mt-4 mx-auto">Add User</a>
+        </div><br>
+
+        <div class="table-responsive">
+            <table class="table table-white table-striped-columns mt-5" id="myUser">
+                <thead>
+                    <tr>
+                        <th scope="col">Sl.no</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each users}}
+                    <tr>
+                        <th scope="row">{{inc @index}}</th>
+                        <td>{{this.firstName}}</td>
+                        <td>{{this.lastName}}</td>
+                        <td>{{this.email}}</td>
+                        <td>
+                            <a href="/admin/edit-user/{{this._id}}" class="btn me-1 my-2"
+                                style="background-color: #005bc5;">Edit</a>
+                            <a href="/admin/delete-user/{{this._id}}" class="btn"
+                                onclick="return confirm('Are you sure want to delete {{this.firstName}} ?');"
+                                style="background-color: rgb(200, 0, 0);">Delete</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+    $(document).ready(function () {
+        $('#myUser').DataTable();
+    });
+
+</script>

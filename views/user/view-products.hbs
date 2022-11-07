@@ -1,0 +1,79 @@
+<style>
+  .btn.disabled { background-color: var(--c-brand); color: rgb(255, 255, 255); }
+  .addCart { background-color: var(--c-brand); color: rgb(255, 255, 255); }
+  .addCart:hover { background-color: var(--c-brand) !important; transition: all
+  .6s cubic-bezier(.165, .84, .44, 1); color: white; } .card-body { color:
+  rgb(0, 0, 0); border-top: 1px solid black; } .card { border-top: 1px solid
+  black; border-bottom: 1px solid black; transition: transform .5s; }
+  .card:hover { transform: scale(1.1) !important; box-shadow: 0px 15px 40px
+  rgba(0, 0, 0, 0.1); z-index: 10; } .card img:active { transform: scale(1.5)
+  !important; cursor: zoom-in !important; background: white !important;
+  border-radius: 9px; box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.252); }
+</style>
+
+<section>
+
+  <div class="container-fluid container-md mt-5">
+    <div class="row">
+
+      {{#each products}}
+         <div class="col-lg-3 col-sm-6 col-12 pt-5 d-flex justify-content-center">
+                <div class="card " style="width: 18rem;">
+                    <div class="blur">
+                        <img id="myimage" src={{this.image}}
+                            style="width: 286px; height: 286px; object-fit: contain;" class="card-img-top img-fluid"
+                            alt="...">
+
+                    <div class="card-body">
+                        <div class="blur-body">
+                        <h5 class="card-title" style="font-weight:bold ;">{{this.name}}</h5>
+                        <p class="card-text">{{this.description}}</p>
+                        <h5 class="card-text">{{this.price}}</h5>
+                        <a href="/" class="btn addCart" style="background-color:#44d62c; color: black;">BUY</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+      {{/each}}
+      {{#each products}}
+      <div class="col-lg-3 col-sm-6 col-12 pt-5 d-flex justify-content-center">
+                <div class="card " style="width: 18rem;">
+                    <div class="blur">
+                        <img id="myimage" src={{this.image}}
+                            style="width: 286px; height: 286px; object-fit: contain;" class="card-img-top img-fluid"
+                            alt="...">
+
+                    <div class="card-body">
+                        <div class="blur-body">
+                        <h5 class="card-title" style="font-weight:bold ;">{{this.name}}</h5>
+                        <p class="card-text">{{this.description}}</p>
+                        <h5 class="card-text">{{this.price}}</h5>
+                        <a href="/" class="btn addCart" style="background-color:#44d62c; color: black;">BUY</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+    </div>
+  </div>
+
+</section>
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid">
+
+  <footer class="bg-dark text-center text-white">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://github.com/fahiz677/portfolio-website">Fahizp3@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+  
+</div>
+<!-- End of .container -->

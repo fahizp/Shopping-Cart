@@ -1,0 +1,80 @@
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+    .dropdown-menu {
+        min-width: 6.5rem;
+        background-color: rgba(255, 255, 255, 0.365);
+        padding: 0px;
+
+    }
+    :root{
+        --c-brand: #669DB3FF;
+        --f-main: "Bai Jamjuree", sans-serif;
+        --c-text1: rgb(255, 255, 255);
+    }
+    body{
+        font-family: var(--f-main);
+    }
+    .btn{
+        background-color: var(--c-brand);
+        color: rgb(255, 255, 255);
+    }
+    a{
+        color: var(--c-text1) !important;
+    }
+</style>
+  <header>
+
+        <nav class="navbar navbar-expand-lg" style="background-color: var(--c-brand)">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/admin"><b>Admin panel</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="/admin">All Products</a>
+                        </li>
+                        {{#if add}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">All Orders</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-white" href="/">View Products Page</a>
+                        </li>
+                           <li class="nav-item">
+                            <a class="nav-link text-white" href="/admin/view-user">All Users</a>
+                        </li>
+                        {{/if}}
+                        {{#if show}}
+                         </li>
+                           <li class="nav-item">
+                            <a class="nav-link text-white" href="/admin/view-user">All Users</a>
+                        </li>
+                        {{/if}}
+
+
+                    </ul>
+                    {{#if adminData}}
+                    <div class="dropdown me-2">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{#if adminData}}
+                        Admin123
+                        {{/if}}
+                    </button>
+                    <ul class="dropdown-menu mt-2 " aria-labelledby="dropdownMenuButton1">
+                    {{#if adminData}}
+                        <li><a class="dropdown-item text-dark text-center justify-content-end" href="/admin/admin-logout">Logout</a></li>
+                    {{/if}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                  
+                </div>
+            </div>
+        </nav>
+    </header>
